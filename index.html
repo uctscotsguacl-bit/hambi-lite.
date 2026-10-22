@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hambi Lite — Prototype</title>
+<style>
+:root{--yellow:#ffd21f;--ink:#171717;--muted:#6b7280;--line:#ececec;--bg:#f6f7f9}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink)}button{font:inherit;cursor:pointer}.app{max-width:440px;min-height:100vh;margin:0 auto;background:#fff;position:relative;padding-bottom:82px;box-shadow:0 0 40px #0000000a}.top{padding:18px 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #f2f2f2}.brand{display:flex;gap:9px;align-items:center;font-weight:900;font-size:25px;letter-spacing:-1px}.bee{width:31px;height:31px;border-radius:50%;background:repeating-linear-gradient(0deg,#171717 0 7px,var(--yellow) 7px 14px);border:2px solid #171717;display:inline-block}.lite{font-size:12px;background:var(--yellow);padding:5px 8px;border-radius:8px;letter-spacing:0}.lang{border:1px solid var(--line);background:white;border-radius:10px;padding:7px 10px;font-size:12px;font-weight:800}.content{padding:18px 18px 22px}.greeting{font-size:23px;font-weight:850;letter-spacing:-.6px;margin:4px 0}.sub{color:var(--muted);font-size:13px;margin:5px 0 17px}.promo{background:linear-gradient(115deg,#ffdf4c,#ffca00);border-radius:20px;padding:18px;display:flex;justify-content:space-between;align-items:center;min-height:116px;margin-bottom:18px}.promo h2{font-size:18px;margin:0 0 7px;max-width:210px}.promo p{font-size:12px;margin:0;color:#45402b}.promoIcon{font-size:43px}.sectionTitle{font-size:16px;font-weight:800;margin:21px 0 12px}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.service{border:1px solid #f0f0f0;border-radius:16px;background:white;padding:15px 6px 12px;text-align:center;box-shadow:0 3px 10px #00000004;min-height:94px}.service:active,.service:hover{border-color:var(--yellow);background:#fffdf2}.emoji{font-size:24px;display:block;margin-bottom:8px}.service span:last-child{font-size:12px;font-weight:650}.quick{display:flex;gap:9px}.quick button{flex:1;border:1px solid var(--line);border-radius:13px;padding:13px 6px;background:#fff;font-size:12px;font-weight:700}.quick b{display:block;font-size:21px;margin-bottom:5px}.card{border:1px solid var(--line);border-radius:16px;padding:15px;margin:10px 0;background:#fff}.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.small{color:var(--muted);font-size:12px}.price{font-size:19px;font-weight:850;margin:8px 0}.primary{border:0;background:var(--yellow);padding:12px 15px;border-radius:12px;font-weight:800;width:100%;margin-top:10px}.secondary{border:1px solid var(--line);background:white;padding:10px 12px;border-radius:11px;font-weight:700}.tabs{position:fixed;bottom:0;width:min(440px,100%);height:70px;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;align-items:center;padding-bottom:env(safe-area-inset-bottom)}.tab{border:0;background:none;color:#747474;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px}.tab .ti{font-size:21px}.tab.active{color:#171717;font-weight:800}.tab.active .ti{background:var(--yellow);border-radius:10px;padding:3px 10px}.back{border:0;background:none;font-size:14px;font-weight:800;padding:0 0 15px}.input{width:100%;border:1px solid var(--line);padding:12px;border-radius:12px;margin:7px 0 10px;font:inherit}.notice{font-size:11px;color:#777;text-align:center;margin-top:15px}.profileLine{padding:15px 0;border-bottom:1px solid #f1f1f1;display:flex;justify-content:space-between;font-size:14px}.hidden{display:none!important}
+</style></head><body><main class="app"><header class="top"><div class="brand"><i class="bee"></i><span>hambi</span><span class="lite">Lite</span></div><button class="lang" id="langBtn">UZ ▾</button></header><section class="content" id="screen"></section><nav class="tabs"><button class="tab active" data-page="home"><span class="ti">⌂</span><span data-t="home">Bosh sahifa</span></button><button class="tab" data-page="services"><span class="ti">▦</span><span data-t="services">Xizmatlar</span></button><button class="tab" data-page="payments"><span class="ti">▣</span><span data-t="payments">To‘lovlar</span></button><button class="tab" data-page="profile"><span class="ti">♙</span><span data-t="profile">Profil</span></button></nav></main>
+<script>
+const words={uz:{home:'Bosh sahifa',services:'Xizmatlar',payments:'To‘lovlar',profile:'Profil',hello:'Hambi Lite abonenti!',subtitle:'Raqamingiz, tarifingiz va to‘lovlaringiz — bitta yengil ilovada.',offer:'Tarif va internet paketlaringizni boshqaring',more:'Paketlarni ko‘rish',popular:'Abonentlar uchun xizmatlar',mobile:'Raqam balansini to‘ldirish',internet:'Uy interneti / Wi-Fi',insurance:'Tariflar',health:'Internet paketlar',travel:'Daqiqa va SMS',energy:'Elektr energiyasi',gas:'Gaz',water:'Suv',school:'Boshqa xizmatlar',other:'Kommunal va boshqa to‘lovlar',quick:'Tezkor amallar',topup:'Hisobni to‘ldirish',history:'To‘lovlar tarixi',balance:'Demo balans',plans:'Mobil tariflar',plan1:'Smart 30',plan2:'Smart 50',monthly:'oyiga',choose:'Tarifni tanlash',search:'Xizmat qidirish…',settings:'Sozlamalar',mydata:'Mening ma’lumotlarim',security:'Xavfsizlik',language:'Til / Language',help:'Yordam va qo‘llab-quvvatlash',logout:'Chiqish',mock:'Namoyish prototipi: haqiqiy to‘lov amalga oshirilmaydi.',pay:'To‘lash',amount:'Summa (so‘m)',phone:'Telefon raqami',continue:'Davom etish',success:'Demo muvaffaqiyatli! Haqiqiy to‘lov bajarilmadi.',back:'← Orqaga',selectLang:'Tilni tanlang',saved:'Til saqlandi'},en:{home:'Home',services:'Services',payments:'Payments',profile:'Profile',hello:'Hello!',subtitle:'Useful services in one simple app.',offer:'Your internet package is running low',more:'Learn more',popular:'Popular services',mobile:'Mobile',internet:'Internet',insurance:'Insurance',health:'Healthcare',travel:'Travel',energy:'Electricity',gas:'Gas',water:'Water',school:'School fees',other:'Other payments',quick:'Quick actions',topup:'Top up balance',history:'Payment history',balance:'Demo balance',plans:'Mobile plans',plan1:'Smart 30',plan2:'Smart 50',monthly:'per month',choose:'Choose plan',search:'Search services…',settings:'Settings',mydata:'My information',security:'Security',language:'Language',help:'Help & support',logout:'Log out',mock:'Demo prototype: no real payment is made.',pay:'Pay',amount:'Amount (UZS)',phone:'Phone number',continue:'Continue',success:'Demo successful! No real payment was processed.',back:'← Back',selectLang:'Choose language',saved:'Language saved'},ru:{home:'Главная',services:'Услуги',payments:'Платежи',profile:'Профиль',hello:'Здравствуйте!',subtitle:'Нужные услуги в одном простом приложении.',offer:'Интернет-пакет скоро закончится',more:'Подробнее',popular:'Популярные услуги',mobile:'Мобильная связь',internet:'Интернет',insurance:'Страхование',health:'Медицина',travel:'Путешествия',energy:'Электричество',gas:'Газ',water:'Вода',school:'Оплата школы',other:'Другие платежи',quick:'Быстрые действия',topup:'Пополнить счёт',history:'История платежей',balance:'Демо-баланс',plans:'Мобильные тарифы',plan1:'Smart 30',plan2:'Smart 50',monthly:'в месяц',choose:'Выбрать тариф',search:'Поиск услуг…',settings:'Настройки',mydata:'Мои данные',security:'Безопасность',language:'Язык / Language',help:'Помощь и поддержка',logout:'Выйти',mock:'Демонстрационный прототип: реальные платежи не выполняются.',pay:'Оплатить',amount:'Сумма (сум)',phone:'Номер телефона',continue:'Продолжить',success:'Демо выполнено! Реальный платёж не проводился.',back:'← Назад',selectLang:'Выберите язык',saved:'Язык сохранён'}};
+let lang='uz',page='home';const $=s=>document.querySelector(s),t=k=>words[lang][k]||k;
+const services=[['📱','mobile'],['📶','internet'],['📦','health'],['💳','insurance'],['☎️','travel'],['⚡','energy'],['🔥','gas'],['💧','water'],['🧾','school']];
+function serviceGrid(){return `<div class="services">${services.map(([e,k])=>`<button class="service" onclick="openService('${k}')"><span class="emoji">${e}</span><span>${t(k)}</span></button>`).join('')}<button class="service" onclick="go('services')"><span class="emoji">＋</span><span>${t('other')}</span></button></div>`}
+function home(){return `<div class="greeting">${t('hello')}</div><p class="sub">${t('subtitle')}</p><div class="card"><div class="row"><div><div class="small">Beeline abonent ma’lumotlari</div><div class="price" style="font-size:18px">Balans va trafik</div><div class="small">Operator javobi so‘rovdan keyin shu ilovada ko‘rinadi</div></div><span style="font-size:28px">📱</span></div><div class="quick" style="margin-top:13px"><button onclick="requestUssd('*102#')"><b>💳</b>Balansni tekshirish</button><button onclick="requestUssd('*103#')"><b>📶</b>Internet qoldig‘i</button></div><div id="ussdResult" class="card" style="margin:12px 0 0;background:#fffdf2;border-color:#ffe16a"><div class="small">USSD natijasi</div><div id="ussdText" style="font-size:13px;white-space:pre-wrap;margin-top:6px">Hali tekshirilmagan. Yuqoridagi tugmalardan birini bosing.</div></div></div><div class="promo"><div><h2>${t('offer')}</h2><p onclick="go('services')">${t('more')} →</p></div><span class="promoIcon">📶</span></div><div class="sectionTitle">${t('popular')}</div>${serviceGrid()}<div class="sectionTitle">Kommunal to‘lovlar</div><div class="quick"><button onclick="openService('energy')"><b>⚡</b>Elektr</button><button onclick="openService('gas')"><b>🔥</b>Gaz</button><button onclick="openService('water')"><b>💧</b>Suv</button></div><p class="notice">${t('mock')} Haqiqiy balans va trafik yuqoridagi USSD tugmalari orqali tekshiriladi.</p>`}
+function servicesPage(){return `<div class="greeting">${t('services')}</div><p class="sub">${t('subtitle')}</p><input class="input" id="search" placeholder="${t('search')}" oninput="filterServices(this.value)"><div id="serviceGrid">${serviceGrid()}</div><p class="notice">${t('mock')}</p>`}
+function payments(){return `<div class="greeting">${t('payments')}</div><div class="card"><div class="small">To‘lovlar</div><div class="price" style="font-size:17px">Rasmiy xizmat orqali</div><div class="small">Bu mustaqil demo ilova. Haqiqiy to‘lovlar hali ulanmagan.</div><button class="primary" onclick="openService('mobile')">＋ ${t('topup')}</button></div><div class="sectionTitle">${t('other')}</div>${[['📱','mobile'],['📶','internet'],['⚡','energy'],['🔥','gas'],['💧','water'],['🎓','school']].map(([e,k])=>`<div class="card row"><span>${e} &nbsp; ${t(k)}</span><button class="secondary" onclick="openService('${k}')">${t('pay')} →</button></div>`).join('')}<p class="notice">${t('mock')}</p>`}
+function profile(){return `<div class="greeting">${t('profile')}</div><div class="card row"><div style="display:flex;gap:12px;align-items:center"><div style="background:#f1f1f1;border-radius:50%;padding:13px;font-weight:800">AB</div><div><b>Azizbek B.</b><div class="small">+998 ** *** ** 45</div></div></div><span>›</span></div>${[['♙','mydata'],['♢','security'],['🌐','language'],['?','help'],['↪','logout']].map(([e,k])=>`<div class="profileLine" onclick="${k==='language'?'languagePicker()':k==='logout'?'alert(\'Demo: chiqish\')':'alert(t(\''+k+'\'))'}"><span>${e} &nbsp; ${t(k)}</span><span>›</span></div>`).join('')}<p class="notice">Hambi Lite • Mustaqil ilova konsepsiyasi</p>`}
+const regions=['Toshkent shahri','Toshkent viloyati','Andijon viloyati','Buxoro viloyati','Farg‘ona viloyati','Jizzax viloyati','Xorazm viloyati','Namangan viloyati','Navoiy viloyati','Qashqadaryo viloyati','Qoraqalpog‘iston Respublikasi','Samarqand viloyati','Sirdaryo viloyati','Surxondaryo viloyati'];
+const districts={
+'Toshkent shahri':['Bektemir','Chilonzor','Mirobod','Mirzo Ulug‘bek','Olmazor','Sergeli','Shayxontohur','Uchtepa','Yakkasaroy','Yashnobod','Yunusobod','Yangi Hayot'],
+'Toshkent viloyati':['Angren','Bekobod','Chirchiq','Olmaliq','Ohangaron','Parkent','Qibray','Zangiota','Yangiyo‘l'],
+'Namangan viloyati':['Chust','Chortoq','Kosonsoy','Mingbuloq','Namangan shahri','Pop','To‘raqo‘rg‘on','Uchqo‘rg‘on','Uychi'],
+'Andijon viloyati':['Andijon shahri','Asaka','Baliqchi','Shahrixon','Xonobod'],
+'Farg‘ona viloyati':['Farg‘ona shahri','Qo‘qon','Marg‘ilon','Quva','Rishton'],
+'Samarqand viloyati':['Samarqand shahri','Kattaqo‘rg‘on','Urgut','Pastdarg‘om'],
+'Buxoro viloyati':['Buxoro shahri','G‘ijduvon','Kogon'],
+'Qashqadaryo viloyati':['Qarshi','Shahrisabz','Kitob'],
+'Surxondaryo viloyati':['Termiz','Denov','Boysun'],
+'Xorazm viloyati':['Urganch','Xiva','Shovot'],
+'Jizzax viloyati':['Jizzax shahri','Do‘stlik','Zomin'],
+'Sirdaryo viloyati':['Guliston','Yangiyer','Shirin'],
+'Navoiy viloyati':['Navoiy shahri','Zarafshon','Uchquduq'],
+'Qoraqalpog‘iston Respublikasi':['Nukus','Qo‘ng‘irot','Xo‘jayli']
+};
+const providers={
+internet:['Uztelecom','Turon Telecom','Sarkor Telecom','TPS','Comnet',' boshqa provayder'],
+mobile:['Beeline','Ucell','Mobiuz','Uzmobile','Humans'],
+energy:['Hududiy elektr tarmoqlari'],
+gas:['Hududgazta’minot'],
+water:['Suv ta’minoti'],
+school:['Maktab / ta’lim muassasasi'],
+insurance:['Sug‘urta tashkilotini tanlang'],
+health:['Tibbiyot tashkilotini tanlang'],
+travel:['Xizmatni tanlang']
+};
+function selectField(id,label,options,required=true){
+ return `<label class="small" for="${id}">${label}${required?' *':''}</label><select class="input" id="${id}" ${required?'required':''}><option value="">Tanlang</option>${options.map(x=>`<option>${x}</option>`).join('')}</select>`;
+}
+function openService(k){
+ const icon=(services.find(x=>x[1]===k)||['💳'])[0];
+ if(['insurance','health','travel'].includes(k)){
+   const titles={insurance:'Mobil tariflar',health:'Internet paketlari',travel:'Daqiqa va SMS paketlari'};
+   const items={
+    insurance:[['Start 20','20 000 so‘m/oy'],['Optimal 35','35 000 so‘m/oy'],['Max 50','50 000 so‘m/oy']],
+    health:[['1 GB internet','10 000 so‘m'],['5 GB internet','25 000 so‘m'],['10 GB internet','40 000 so‘m']],
+    travel:[['100 daqiqa','8 000 so‘m'],['300 daqiqa','18 000 so‘m'],['SMS paketi','5 000 so‘m']]
+   };
+   $('#screen').innerHTML=`<button class="back" onclick="go('${page}')">${t('back')}</button><div class="greeting">${icon} ${titles[k]}</div><p class="sub">Abonent uchun demo tanlovlar. Faollashtirish haqiqiy tizimga ulanmagan.</p>${items[k].map(([name,price],i)=>`<div class="card row"><div><b>${name}</b><div class="small">${price}</div></div><button class="secondary" onclick="alert('Demo: '+${JSON.stringify(name)}+' tanlandi. Haqiqiy paket faollashtirilmadi.')">Tanlash</button></div>`).join('')}<p class="notice">Tarif va paket narxlari namuna uchun kiritilgan.</p>`;
+   return;
+ }
+ const utility=['energy','gas','water'].includes(k);
+ const internet=k==='internet';
+ const mobile=k==='mobile';
+ const regional=utility||internet||['school','health'].includes(k);
+ let fields='';
+ if(regional){
+   fields+=selectField('region','Viloyat / hudud',regions);
+   fields+=`<label class="small" for="district">Tuman / shahar *</label><select class="input" id="district" required><option value="">Avval viloyatni tanlang</option></select>`;
+ }
+ if(internet||mobile||['energy','gas','water'].includes(k)||k==='school'){
+   fields+=selectField('provider',internet?'Internet provayderi':mobile?'Mobil operator':k==='energy'?'Elektr ta’minoti':k==='gas'?'Gaz ta’minoti':k==='water'?'Suv ta’minoti':'Ta’lim muassasasi',providers[k]||['Boshqa']);
+ }
+ if(mobile){
+   fields+=`<label class="small" for="account">Telefon raqami *</label><input class="input" id="account" placeholder="+998 90 123 45 67" inputmode="tel" required>`;
+ }else if(internet){
+   fields+=`<label class="small" for="account">Shartnoma / abonent raqami *</label><input class="input" id="account" placeholder="Shartnoma raqamini kiriting" required>`;
+   fields+=`<label class="small" for="wifi">Wi-Fi nomi (ixtiyoriy)</label><input class="input" id="wifi" placeholder="Masalan: Home_WiFi">`;
+ }else if(utility){
+   fields+=`<label class="small" for="account">Shaxsiy hisob raqami *</label><input class="input" id="account" placeholder="Hisob raqamini kiriting" inputmode="numeric" required>`;
+ }else{
+   fields+=`<label class="small" for="account">${k==='school'?'O‘quvchi / shartnoma raqami':'Mijoz yoki shartnoma raqami'} *</label><input class="input" id="account" placeholder="Raqamni kiriting" required>`;
+ }
+ fields+=`<label class="small" for="amount">${t('amount')} *</label><input class="input" id="amount" placeholder="50 000" inputmode="numeric" required>`;
+ $('#screen').innerHTML=`<button class="back" onclick="go('${page}')">${t('back')}</button><div class="greeting">${icon} ${t(k)}</div><p class="sub">${t('mock')}</p><form class="card" id="serviceForm" onsubmit="demoPay(event)">${fields}<button class="primary" type="submit">${t('pay')}</button></form><p class="notice">${t('mock')} Ma’lumotlar demo uchun, real hisob tekshirilmaydi.</p>`;
+ const region=$('#region'), district=$('#district');
+ if(region&&district){
+   region.addEventListener('change',()=>{
+     const list=districts[region.value]||['Tuman / shahar ro‘yxati demo uchun cheklangan'];
+     district.innerHTML='<option value="">Tumanni tanlang</option>'+list.map(x=>`<option>${x}</option>`).join('');
+   });
+ }
+}
+function topup(){openService('mobile')}
+function demoPay(event){
+ if(event) event.preventDefault();
+ const form=$('#serviceForm');
+ if(form&&!form.reportValidity()) return;
+ const amount=$('#amount')?.value||'';
+ if(!amount||Number(amount.replace(/\s/g,''))<=0){alert('To‘lov summasini to‘g‘ri kiriting.');return;}
+ alert(t('success')+'\nKiritilgan ma’lumotlar faqat namoyish uchun ishlatiladi.');
+ go('payments');
+}
+function requestUssd(code){const text=document.getElementById('ussdText');if(text)text.textContent='USSD so‘rovi yuborilmoqda: '+code+' …';if(window.AndroidUssd&&typeof window.AndroidUssd.request==='function'){window.AndroidUssd.request(code)}else{if(text)text.textContent='USSD tekshiruvi Android ilovasida ishlaydi. Hozir brauzerda ochilgansiz.';}}
+function onUssdResult(code,message,success){const el=document.getElementById('ussdText');if(el)el.textContent=(success?'Operator javobi':'So‘rov holati')+' · '+code+'\n\n'+message;}
+function languagePicker(){const opts=[['uz','🇺🇿 O‘zbekcha'],['en','🇬🇧 English'],['ru','🇷🇺 Русский']];$('#screen').innerHTML=`<button class="back" onclick="go('profile')">${t('back')}</button><div class="greeting">${t('selectLang')}</div>${opts.map(([l,n])=>`<div class="card row" onclick="setLang('${l}')"><span>${n}</span><b>${lang===l?'🟡':'○'}</b></div>`).join('')}<button class="primary" onclick="go('profile')">${t('saved')}</button>`}
+function setLang(l){lang=l;document.documentElement.lang=l;$('#langBtn').textContent=l.toUpperCase()+' ▾';render();}
+function go(p){page=p;document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render()}
+function render(){const el=$('#screen');el.innerHTML=page==='home'?home():page==='services'?servicesPage():page==='payments'?payments():profile();document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t(el.dataset.t))}
+function filterServices(v){const q=v.toLowerCase();$('#serviceGrid').innerHTML=`<div class="services">${services.filter(([e,k])=>t(k).toLowerCase().includes(q)).map(([e,k])=>`<button class="service" onclick="openService('${k}')"><span class="emoji">${e}</span><span>${t(k)}</span></button>`).join('')}</div>`}
+$('#langBtn').onclick=languagePicker;document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>go(b.dataset.page));render();
+</script></body></html>
